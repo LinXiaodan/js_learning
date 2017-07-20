@@ -214,3 +214,33 @@ function convert(key, value) {
 }
 console.log(JSON.stringify(xiaoming, convert, '  '));
 
+/*//class,现在大多数浏览器不支持
+class Student {
+    constructor(name) {
+        this.name = name;
+    }
+
+    hello() {
+        alert('Hello, ' + this.name + '!');
+    }
+}
+class PrimaryStudent extends Student {
+    constructor(name, grade) {
+        super(name); // 记得用super调用父类的构造方法!
+        this.grade = grade;
+    }
+
+    myGrade() {
+        alert('I am at grade ' + this.grade);
+    }
+}*/
+
+$('document').ready(function(){
+    // $('document').write('this is the test');
+    $('button').css('background-color', '#ff0000');
+    $('ul.test-li').css('background-color', '#ffd351');
+
+});
+
+
+//<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
