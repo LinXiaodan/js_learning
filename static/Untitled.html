@@ -1,37 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>my first web page</title>
-  <script src="/static/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/static/js/a.js"></script>
+    <meta charset="utf-8">
+    <title>my first web page</title>
+    <script src="/static/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/static/js/a.js"></script>
 </head>
 <body>
-  <h1>The body of this page</h1>
-  <div id="test-jquery">
-    <p id="para-1" class="color-red">JavaScript</p>
-    <p id="para-2" class="color-green">Haskell</p>
-    <p class="color-red color-green">Erlang</p>
-    <p name="name" class="color-black">Python</p>
-    <form class="test-form" target="_blank" action="#0" onsubmit="return false;">
-      <legend>注册新用户</legend>
-      <fieldset>
-        <p><label>名字: <input name="name"></label></p>
-        <p><label>邮件: <input name="email"></label></p>
-        <p><label>口令: <input name="password" type="password"></label></p>
-        <p><button type="submit">注册</button></p>
-      </fieldset>
-    </form>
+    <h1>The body of this page</h1>
+    <div id="test-jquery">
+        <p id="para-1" class="color-red">JavaScript</p>
+        <p id="para-2" class="color-green">Haskell</p>
+        <p class="color-red color-green">Erlang</p>
+        <p name="name" class="color-black">Python</p>
+        <form class="test-form" target="_blank" action="#0" onsubmit="return false;">
+          <legend>注册新用户</legend>
+          <fieldset>
+            <p><label>名字: <input name="name"></label></p>
+            <p><label>邮件: <input name="email"></label></p>
+            <p><label>口令: <input name="password" type="password"></label></p>
+            <p><button type="submit">注册</button></p>
+          </fieldset>
+        </form>
 
-    <ul class="test-li">
-      <li>aaa</li>
-      <li>bbb</li>
-      <li>ccc</li>
-      <li>ddd</li>
-    </ul>
-    <button>test</button>
+        <ul class="test-li">
+          <li>aaa</li>
+          <li>bbb</li>
+          <li>ccc</li>
+          <li>ddd</li>
+        </ul>
+        <button>test</button>
+        <div><input id="test-radio" name="test" type="radio" checked value="1"></div>
+        <div><input id="test-input" name="email" value="email"></div>
+        <div>
+            <select id="test-select" name="city">
+                <option value="BJ" selected>Beijing</option>
+                <option value="SH">Shanghai</option>
+                <option value="SZ">Shenzhen</option>
+            </select>
+        </div>
+        <div>
+            <textarea id="test-textarea">Hello</textarea>
+        </div>
 
+        <a id="test-link" href="#0">点我试试</a>
 
-  </div>
+        <div id="test-highlight1">
+            <p>什么是<span>jQuery</span></p>
+            <p><span>jQuery</span>是目前最流行的<span>JavaScript</span>库。</p>
+        </div>
+
+    </div>
 </body>
 </html>

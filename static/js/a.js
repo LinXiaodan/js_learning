@@ -57,7 +57,7 @@ else {
 
 alert(a = 'a'.toUpperCase());
 */
-
+/*
 var arr = ['A', '', 'B', null, undefined, 'C', '  '];
 var r = arr.filter(function (s) {
     return s && s.trim(); // 注意：IE9以下的版本没有trim()方法
@@ -73,6 +73,7 @@ var r = arr.filter(function (element, index, self) {
     console.log(self); // self就是变量arr
     return true;
 });
+*/
 
 /*
 //get the prime number of an array
@@ -101,6 +102,7 @@ if (r.toString() === [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53
     alert('测试失败: ' + r.toString());
 }*/
 
+/*
 var obj = {
     birth: 1990,
     getAge: function (year) {
@@ -110,6 +112,7 @@ var obj = {
     }
 };
 document.write(obj.getAge(2015)+'<br>'); // 25
+*/
 
 /*
 function* next_id() {
@@ -130,6 +133,7 @@ if (pass) {
     alert('测试通过!');
 }*/
 
+/*
 document.write(123..toString()+'<br>');
 
 var now = new Date();
@@ -149,6 +153,7 @@ document.write('a,b;; c  d'.split(/[\s\,\;]+/).toString()+'<br>');
 re = /^(\d{3})-(\d{3,8})$/;
 document.write(re.exec('010-12345')+'<br>');
 document.write(re.exec('010 12345')+'<br>');
+*/
 
 /*
 //check email with RegExp
@@ -235,12 +240,66 @@ class PrimaryStudent extends Student {
     }
 }*/
 
-$('document').ready(function(){
+//the same as: $(document).ready(function(){});
+$(function(){
     // $('document').write('this is the test');
-    $('button').css('background-color', '#ff0000');
-    $('ul.test-li').css('background-color', '#ffd351');
+    var getButton = $('button');
+    getButton.css('background-color', '#ff0000');
+    var testLi = $('ul.test-li');
+    testLi.hide();
+    getButton.attr('name', 'button');
+    var radio = $('input#test-radio');
+    console.log(radio.attr('value'));
+    console.log(radio.attr('checked')+'\n'+radio.is(':checked')+'\n'+radio.prop('checked'));
+
+    var
+        input = $('#test-input'),
+        select = $('#test-select'),
+        textarea = $('#test-textarea');
+
+    console.log(input.attr('name'));
+    console.log(input.val());
+    input.val('abc@example.com'); // 文本框的内容已变为abc@example.com
+
+    console.log(select.val());
+    select.val('SH'); // 选择框已变为Shanghai
+
+    console.log(textarea.val());
+    textarea.val('Hi'); // 文本区域已更新为'Hi'
+
+    //add string
+    testLi.show();
+    testLi.append('<li>add DOM</li>');
+    //add dom object
+    var ps = document.createElement('li');
+    ps.innerHTML = '<span>Pascal</span>';
+    testLi.append(ps);
+    testLi.append(function (index) {
+        return '<li><span>Language - ' + index + '</span></li>';
+    });
+
+    //same level add
+    var li_test = $('ul.test-li>li:nth-child(2)');
+    li_test.after('<li>add in the same level, after</li>');
+    li_test.before('<li>add in the same level, before</li>');
+
+    var a = $('#test-link');
+    a.click(function () {
+        alert('Hello');
+    });
+
+    $.fn.highlight2 = function(){
+        this.css('backgroundColor', '#0000ff').css('color', '#ff0000');
+        return this;
+    };
+    $.fn.highlight1 = function () {
+        // this已绑定为当前jQuery对象:
+        this.css('backgroundColor', '#fffceb').css('color', '#d85030');
+        return this;
+    };
+    $('#test-highlight1 span').highlight2();
 
 });
 
-
+console.log('hello!');
 //<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
