@@ -14,3 +14,6 @@
 
 ### Bootstrap
 css框架
+
+### koa-static
+静态文件指定中间件
